@@ -9,7 +9,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "tsc-watch --onSuccess \"yarn start\"",
-    "start": "chcp 65001 | node --env-file=.env build/bot.js"
+    "start": "node --env-file=.env build/bot.js"
   },
   "dependencies": {
     "@grammyjs/chat-members": "^1.1.0",
