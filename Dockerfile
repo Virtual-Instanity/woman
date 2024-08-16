@@ -1,6 +1,7 @@
 FROM node:21-alpine
 
-RUN cd
+RUN mkdir /app
+WORKDIR /app
 
 COPY yarn.lock .
 COPY package.json .
