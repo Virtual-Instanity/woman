@@ -8,6 +8,7 @@ COPY package.json .
 RUN yarn
 
 COPY . .
+RUN yarn tsc
 
 # Timeweb ругаеса на ето)
 EXPOSE 80
