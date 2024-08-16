@@ -1,0 +1,26 @@
+{
+  "name": "duckbot",
+  "version": "1.0.0",
+  "main": "build/bot.js",
+  "author": {
+    "name": "ufame",
+    "email": "m4tscz@ya.ru"
+  },
+  "license": "MIT",
+  "scripts": {
+    "dev": "tsc-watch --onSuccess \"yarn start\"",
+    "start": "chcp 65001 | node --env-file=.env build/bot.js"
+  },
+  "dependencies": {
+    "@grammyjs/chat-members": "^1.1.0",
+    "envalid": "^8.0.0",
+    "grammy": "^1.28.0",
+    "pino": "^9.3.2",
+    "pino-pretty": "^11.2.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.1.0",
+    "tsc-watch": "^6.2.0",
+    "typescript": "^5.5.4"
+  }
+}
