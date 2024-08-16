@@ -1,5 +1,6 @@
 {
-  "name": "duckbot",
+  "name": "woman",
+  "description": "Telegram bot for virtual instanity group.",
   "version": "1.0.0",
   "main": "build/bot.js",
   "author": {
