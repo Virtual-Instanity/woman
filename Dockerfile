@@ -12,4 +12,4 @@ COPY . .
 # Timeweb ругаеса на ето)
 EXPOSE 80
 
-ENTRYPOINT ["node", "--env-file=.env", "build/bot.js"]
+ENTRYPOINT ["node", "build/bot.js"]
