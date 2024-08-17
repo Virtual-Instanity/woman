@@ -1,0 +1,1 @@
+export { dumpCommand } from './command';
