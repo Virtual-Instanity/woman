@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@grammyjs/auto-chat-action@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@grammyjs/auto-chat-action/-/auto-chat-action-0.1.1.tgz#2c70faca0e317ac3e742ea241181cedaa4231081"
+  integrity sha512-70Jdy+keIri4452tluaZpKtHag5gD8pNczoXqajsnsx7pJC5wg3DAQ5unpt0xJb8KsVBAGWuJb298SBl3TVecg==
+
 "@grammyjs/chat-members@^1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@grammyjs/chat-members/-/chat-members-1.1.0.tgz#6ef74f2328e3723f4075e0ed6e98e336055e9527"

@@ -13,6 +13,7 @@
     "start": "node --env-file=.env build/bot.js"
   },
   "dependencies": {
+    "@grammyjs/auto-chat-action": "^0.1.1",
     "@grammyjs/chat-members": "^1.1.0",
     "envalid": "^8.0.0",
     "grammy": "^1.28.0",

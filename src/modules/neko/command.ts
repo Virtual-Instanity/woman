@@ -10,6 +10,8 @@ export async function nekoCommand(ctx: BotContext) {
       return;
     }
 
+    ctx.chatAction = "upload_photo";
+
     const neko = await getNeko();
 
     const messageId = ctx.message.message_id;
