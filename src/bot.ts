@@ -18,6 +18,10 @@ bot.use(chatMembers(adapter));
 
 bot.use(modulesComposer);
 
+if (appConfig.isDev) {
+  bot.catch(logger.error);
+}
+
 async function start() {
   await bot.api.setMyCommands(botCommands);
 
