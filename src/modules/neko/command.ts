@@ -13,11 +13,21 @@ export async function nekoCommand(ctx: BotContext) {
     ctx.chatAction = "upload_photo";
 
     const neko = await getNeko();
-
     const messageId = ctx.message.message_id;
 
+    if (!neko) {
+      logger.warn("No neko found.");
+      await ctx.reply("Не получается получить картинку по запросу.", {
+        reply_parameters: {
+          message_id: messageId,
+          allow_sending_without_reply: true
+        }
+      });
+      return;
+    }
+
     await ctx.replyWithPhoto(neko.url, {
-      caption: `Artist: <a href=\"${neko.artist_href}\">${neko.artist_name}</a>\n`,
+      caption: `Автор: <a href=\"${neko.artist_href}\">${neko.artist_name}</a>. <a href=\"${neko.source_url}\">Сурс</a>\n`,
       parse_mode: "HTML",
       reply_parameters: {
         message_id: messageId,
@@ -41,6 +51,6 @@ export async function nekoCommand(ctx: BotContext) {
     logger.info(sb.toString());
 
   } catch (error) {
-    logger.error(error);
+    logger.error("Error in nekoCommand:", error);
   }
 }
