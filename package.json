@@ -10,7 +10,6 @@
   "license": "MIT",
   "scripts": {
     "dev": "tsc-watch --onSuccess \"yarn start\"",
-    "tsc": "tsc",
     "start": "node --env-file=.env build/bot.js"
   },
   "dependencies": {
