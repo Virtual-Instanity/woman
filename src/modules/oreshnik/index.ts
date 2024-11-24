@@ -7,7 +7,7 @@ export async function oreshnikCommand(ctx: BotContext) {
 
   let orehMessage: string;
 
-  if (ctx.message.reply_to_message?.text) {
+  if (ctx.message.reply_to_message?.from) {
     const targetUser = ctx.message.reply_to_message.from;
     const userTag = targetUser?.username
       ? `@${targetUser.username}`
