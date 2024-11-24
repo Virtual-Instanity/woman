@@ -23,6 +23,6 @@ export async function oreshnikCommand(ctx: BotContext) {
   }
 
   await ctx.reply(orehMessage, {
-    parse_mode: "MarkdownV2",
+    parse_mode: "Markdown",
   });
 }
