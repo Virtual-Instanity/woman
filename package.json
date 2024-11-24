@@ -16,9 +16,7 @@
     "@grammyjs/auto-chat-action": "^0.1.1",
     "@grammyjs/chat-members": "^1.1.0",
     "envalid": "^8.0.0",
-    "grammy": "^1.28.0",
-    "pino": "^9.3.2",
-    "pino-pretty": "^11.2.2"
+    "grammy": "^1.28.0"
   },
   "devDependencies": {
     "@types/node": "^22.1.0",

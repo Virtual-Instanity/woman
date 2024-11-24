@@ -6,7 +6,6 @@ import { autoChatAction } from "@grammyjs/auto-chat-action";
 
 import { appConfig } from "./config";
 import { BotContext } from "./types";
-import { logger } from "./logger";
 
 import {
   botCommands,
@@ -22,7 +21,7 @@ bot.use(autoChatAction());
 bot.use(modulesComposer);
 
 if (appConfig.isDev) {
-  bot.catch(logger.error);
+  bot.catch(console.error);
 }
 
 async function start() {
@@ -30,7 +29,7 @@ async function start() {
 
   await bot.start({
     onStart({username, first_name}) {
-      logger.info(`Bot https://t.me/${username} (${first_name}) is running!`);
+      console.info(`Bot https://t.me/${username} (${first_name}) is running!`);
     },
     allowed_updates: [
       "message",

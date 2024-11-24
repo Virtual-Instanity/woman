@@ -1,6 +1,5 @@
 import { appConfig } from "../../config";
 import { StringBuilder } from "../../helpers";
-import { logger } from "../../logger";
 import { BotContext } from "../../types";
 import { getNeko } from "./neko";
 
@@ -16,7 +15,7 @@ export async function nekoCommand(ctx: BotContext) {
     const messageId = ctx.message.message_id;
 
     if (!neko) {
-      logger.warn("No neko found.");
+      console.warn("No neko found.");
       await ctx.reply("Не получается получить картинку по запросу.", {
         reply_parameters: {
           message_id: messageId,
@@ -48,9 +47,9 @@ export async function nekoCommand(ctx: BotContext) {
         .append(`Picture url: ${neko.url}`);
     }
 
-    logger.info(sb.toString());
+    console.info(sb.toString());
 
   } catch (error) {
-    logger.error("Error in nekoCommand:", error);
+    console.error("Error in nekoCommand:", error);
   }
 }
