@@ -14,15 +14,17 @@ export async function oreshnikCommand(ctx: BotContext) {
       : `[${targetUser?.id}](tg://user?id=${targetUser?.id})`;
 
     orehMessage = oreshnikPhrases.individual[
-      Math.floor(Math.random() * oreshnikPhrases.individual.length)
+      Math.floor(Math.random() * oreshnikPhrases.individual.length - 1)
     ].replace("{user}", userTag);
   } else {
     orehMessage = oreshnikPhrases.global[
-      Math.floor(Math.random() * oreshnikPhrases.global.length)
+      Math.floor(Math.random() * oreshnikPhrases.global.length - 1)
     ];
   }
 
   await ctx.reply(orehMessage, {
     parse_mode: "Markdown",
   });
+
+  await ctx.deleteMessage();
 }
