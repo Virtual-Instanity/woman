@@ -11,19 +11,19 @@ export async function oreshnikCommand(ctx: BotContext) {
     const targetUser = ctx.message.reply_to_message.from;
     const userTag = targetUser?.username
       ? `@${targetUser.username}`
-      : `[${targetUser?.id}](tg://user?id=${targetUser?.id})`;
+      : `<a href="tg://user?id=${targetUser?.id}">${targetUser?.id}</a>`;
 
     orehMessage = oreshnikPhrases.individual[
-      Math.floor(Math.random() * oreshnikPhrases.individual.length - 1)
+      Math.floor(Math.random() * oreshnikPhrases.individual.length)
     ].replace("{user}", userTag);
   } else {
     orehMessage = oreshnikPhrases.global[
-      Math.floor(Math.random() * oreshnikPhrases.global.length - 1)
+      Math.floor(Math.random() * oreshnikPhrases.global.length)
     ];
   }
 
   await ctx.reply(orehMessage, {
-    parse_mode: "Markdown",
+    parse_mode: "HTML",
   });
 
   await ctx.deleteMessage();
