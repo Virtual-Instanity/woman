@@ -1,6 +1,6 @@
 import { appConfig } from "../../config";
 import { StringBuilder } from "../../helpers";
-import { BotContext } from "../../types";
+import type { BotContext } from "../../types";
 import { getNeko } from "./neko";
 
 export async function nekoCommand(ctx: BotContext) {
@@ -41,7 +41,7 @@ export async function nekoCommand(ctx: BotContext) {
       .appendLine(`From: ${ctx.from?.id} (${ctx.from?.username}).`);
 
     if (appConfig.isDev) {
-      sb.appendLine(`Result:`)
+      sb.appendLine('Result:')
         .appendLine(`Artist href: ${neko.artist_href}`)
         .appendLine(`Artist name: ${neko.artist_name}`)
         .append(`Picture url: ${neko.url}`);
