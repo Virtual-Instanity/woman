@@ -1,18 +1,26 @@
 import { BotContext } from "../../types";
 
-export async function dumpCommand(ctx: BotContext) {
-  const chatMember = await ctx.chatMembers.getChatMember();
+export async function dumpCommand(ctx: BotContext): Promise<void> {
+  const {
+    message,
+    chatMembers: { getChatMember },
+  } = ctx;
 
-  if (!ctx.message || chatMember.status === "member") return;
+  const chatMember = await getChatMember();
+  const messageToDump = message?.reply_to_message || message;
 
-  const message_to_dump = ctx.message?.reply_to_message || ctx.message;
+  if (!messageToDump || chatMember.status !== "administrator")
+    return;
 
-  if (!message_to_dump.from) return;
-  
-  await ctx.reply(`<code>${JSON.stringify(message_to_dump, null, 2)}</code>`, {
-    parse_mode: 'HTML',
+  if (!messageToDump.from)
+    return;
+
+  const messageJson = JSON.stringify(messageToDump, null, 2);
+
+  await ctx.reply(`<code>${messageJson}</code>`, {
+    parse_mode: "HTML",
     reply_parameters: {
-      message_id: ctx.message?.message_id,
-    }
+      message_id: message?.message_id,
+    },
   });
 }
