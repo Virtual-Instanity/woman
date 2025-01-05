@@ -5,6 +5,8 @@ WORKDIR /app
 
 COPY yarn.lock .
 COPY package.json .
+COPY drizzle.config.ts .
+COPY sqlite.db .
 
 RUN yarn
 
