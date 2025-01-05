@@ -9,9 +9,19 @@ export const composer = new Composer<BotContext>();
 
 composer.command("neko", nekoCommand);
 composer.command("msgdump", dumpCommand);
-composer.command(["oreshnik", "oreh", "орех", "орешник"], oreshnikCommand);
+composer.command(["oreshnik", "oreh"], oreshnikCommand);
 
-export const botCommands = [{
-  command: "neko",
-  description: "Получить аниме дефку",
-}];
+export const botCommands = [
+  {
+    command: "neko",
+    description: "Получить аниме дефку",
+  },
+  {
+    command: "msgdump",
+    description: "Дамп сообщения",
+  },
+  {
+    command: "oreshnik",
+    description: "Орешник",
+  }
+];
