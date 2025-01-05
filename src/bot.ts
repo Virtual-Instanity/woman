@@ -12,7 +12,7 @@ import {
   composer as modulesComposer
 } from "./modules";
 
-const bot = new Bot<BotContext>(appConfig.BOT_TOKEN);
+export const bot = new Bot<BotContext>(appConfig.BOT_TOKEN);
 const adapter = new MemorySessionStorage<ChatMember>();
 
 bot.use(chatMembers(adapter));
@@ -24,18 +24,4 @@ if (appConfig.isDev) {
   bot.catch(console.error);
 }
 
-async function start() {
-  await bot.api.setMyCommands(botCommands);
-
-  await bot.start({
-    onStart({username, first_name}) {
-      console.info(`Bot https://t.me/${username} (${first_name}) is running!`);
-    },
-    allowed_updates: [
-      "message",
-      "chat_member",
-    ]
-  });
-}
-
-start();
+bot.api.setMyCommands(botCommands);
