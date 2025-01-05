@@ -258,6 +258,13 @@
   resolved "https://registry.yarnpkg.com/@grammyjs/chat-members/-/chat-members-1.1.0.tgz#6ef74f2328e3723f4075e0ed6e98e336055e9527"
   integrity sha512-XwPd3XVL+r43xYrBUdD2Tiu1UU4Zx9flT+Us9JW3vnepDQ4TISSQuHHPZ0TuRa69HsKXNaMt0U2H6yU34EJQ3w==
 
+"@grammyjs/runner@^2.0.3":
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/@grammyjs/runner/-/runner-2.0.3.tgz#cfb08958fd563ce1e0eda5754a40b3d632c4eaa1"
+  integrity sha512-nckmTs1dPWfVQteK9cxqxzE+0m1VRvluLWB8UgFzsjg62w3qthPJt0TYtJBEdG7OedvfQq4vnFAyE6iaMkR42A==
+  dependencies:
+    abort-controller "^3.0.0"
+
 "@grammyjs/types@3.12.0":
   version "3.12.0"
   resolved "https://registry.yarnpkg.com/@grammyjs/types/-/types-3.12.0.tgz#cebae36d4c58173010c493df9e53936ecb32a7ab"

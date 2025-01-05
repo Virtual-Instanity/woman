@@ -10,11 +10,17 @@
   "license": "MIT",
   "scripts": {
     "dev": "tsc-watch --onSuccess \"yarn start\"",
-    "start": "node --env-file=.env build/bot.js"
+    "start": "node --env-file=.env build/run.js",
+    "compile": "tsc",
+    "studio": "yarn drizzle-kit studio --port 3001",
+    "migration:generate": "yarn drizzle-kit generate",
+    "migration:revert": "yarn drizzle-kit drop",
+    "migration:run": "node build/utils/migrator.js"
   },
   "dependencies": {
     "@grammyjs/auto-chat-action": "^0.1.1",
     "@grammyjs/chat-members": "^1.1.0",
+    "@grammyjs/runner": "^2.0.3",
     "better-sqlite3": "^11.7.2",
     "drizzle-orm": "^0.38.3",
     "envalid": "^8.0.0",
